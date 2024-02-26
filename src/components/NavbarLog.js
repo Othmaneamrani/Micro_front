@@ -1,6 +1,6 @@
 import './navbar.css';
 
-export default function Navbar () {
+export default function NavbarLog () {
     return (
         <nav className="navbar-container">
             <div className="navbar">
@@ -19,8 +19,7 @@ export default function Navbar () {
                 </form>
             </div>
             <div className="navbar-right">
-                <a href="/login" className="navbar-link">Login</a>
-                <a href="/sign" className="navbar-link">Sign up</a>
+                <a href="/profil" className="navbar-link">Profil</a>
             </div>
         </nav>
     );

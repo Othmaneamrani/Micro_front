@@ -1,173 +1,150 @@
-.login-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 400px;
-    padding: 40px;
-    transform: translate(-50%, -50%);
-    background: rgba(0,0,0,.5);
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+
+
+.sign-container {
+	display: block;
+	position: relative;
+	z-index: 0;
+	margin: 6rem auto 5rem;
+  padding: 5rem 4rem 0 4rem;
+	width: 50%;
+	max-width: 400px;
+	min-height: 300px;
+	box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.85);
     border-radius: 10px;
 }
 
-    .login-box h2 {
-        margin: 0 0 0px;
-        padding: 0;
-        color: #fff;
-        text-align: center;
-    }
+.sign-container:after {
+	content: '';
+	display: inline-block;
+	position: absolute;
+	z-index: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-image: radial-gradient(ellipse at left bottom, rgba(22, 24, 47, 1) 0%,rgba(38, 20, 72, .9) 59%, rgba(17, 27, 75, .9) 100%);
+	box-shadow: 0 -20px 150px -20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
 
-    .login-box .user-box {
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-    }
-
-        .login-box .user-box input {
-            width: 100%;
-            padding: 10px 0;
-            font-size: 16px;
-            color: #fff;
-            margin-bottom: 25px;
-            border: none;
-            border-bottom: 1px solid #fff;
-            outline: none;
-            background: transparent;
-        }
-
-        .login-box .user-box label {
-            position: absolute;
-            top: 0;
-            left: 0;
-            padding: 10px 0;
-            font-size: 16px;
-            color: #fff;
-            pointer-events: none;
-            transition: .5s;
-        }
-
-        .login-box .user-box input:focus ~ label,
-        .login-box .user-box input:valid ~ label {
-            top: -20px;
-            left: 0;
-            color: #03e9f4;
-            font-size: 12px;
-        }
-
-    .login-box form .btn,
-    .login-box form a {
-        position: relative;
-        display: inline-block;
-        padding: 10px 15px;
-        color: #03e9f4;
-        font-size: 16px;
-        text-decoration: none;
-        text-transform: uppercase;
-        overflow: hidden;
-        transition: .5s;
-        margin-top: 30px;
-        letter-spacing: 4px;
-        background: transparent;
-        border: none;
-    }
-
-    .login-box .btn:hover, .login-box a:hover {
-        background: #03e9f4;
-        color: #fff;
-        border-radius: 5px;
-        box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
-    }
-
-    .login-box .btn span, .login-box a span {
-        position: absolute;
-        display: block;
-    }
-
-        .login-box .btn span:nth-child(1), .login-box a span:nth-child(1) {
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #03e9f4);
-            animation: btn-anim1 1s linear infinite;
-        }
-
-@keyframes btn-anim1 {
-    0% {
-        left: -100%;
-    }
-
-    50%,100% {
-        left: 100%;
-    }
 }
 
-.login-box .btn span:nth-child(2), .login-box a span:nth-child(2) {
-    top: -100%;
-    right: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(180deg, transparent, #03e9f4);
-    animation: btn-anim2 1s linear infinite;
-    animation-delay: .25s
+.form-sign {
+	position: relative;
+	z-index: 1;
+  padding-bottom: 4.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
 
-@keyframes btn-anim2 {
-    0% {
-        top: -100%;
-    }
-
-    50%,100% {
-        top: 100%;
-    }
+.sign-nav {
+	position: relative;
+	padding: 0;
+	margin: 0 0 6em 1rem;
 }
 
-.login-box .btn span:nth-child(3), .login-box a span:nth-child(3) {
-    bottom: 0;
-    right: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(270deg, transparent, #03e9f4);
-    animation: btn-anim3 1s linear infinite;
-    animation-delay: .5s
+.sign-nav__item {
+	list-style: none;
+	display: inline-block;
 }
 
-@keyframes btn-anim3 {
-    0% {
-        right: -100%;
-    }
-
-    50%,100% {
-        right: 100%;
-    }
+.sign-nav__item + .sign-nav__item {
+	margin-left: 2.25rem;
 }
 
-.login-box .btn span:nth-child(4), .login-box a span:nth-child(4) {
-    bottom: -100%;
-    left: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(360deg, transparent, #03e9f4);
-    animation: btn-anim4 1s linear infinite;
-    animation-delay: .75s
+.sign-nav__item a {
+	position: relative;
+	color: rgba(255, 255, 255, 0.5);
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: 1.25rem;
+	padding-bottom: .5rem;
+	transition: .20s all ease;
 }
 
-@keyframes btn-anim4 {
-    0% {
-        bottom: -100%;
-    }
+.sign-nav__item.active a,
+.sign-nav__item a:hover{
+	color: #ffffff;
+	transition: .15s all ease;
+}
 
-    50%,100% {
-        bottom: 100%;
-    }
+.sign-nav__item a:after {
+	content: '';
+  display: inline-block;
+  height: 10px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  right: 100%;
+  bottom: -1px;
+  left: 0;
+  border-radius: 50%;
+  transition: .15s all ease;
+}
+
+.sign-nav__item a:hover:after,
+.sign-nav__item.active a:after{
+	background-color: rgb(17, 97, 237);
+	height: 2px;
+	right: 0;
+	bottom: 2px;
+	border-radius: 0;
+	transition: .20s all ease;
+}
+.sign__label {
+	display: block;
+	padding-left: 1rem;
+}
+
+.sign__label{
+	color: rgba(255, 255, 255, 0.5);
+	text-transform: uppercase;
+	font-size: .75rem;
+	margin-bottom: 1rem;
 }
 
 
-.login-link {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    padding: 5px;
-    margin: 5px;
+.sign__input {
+	color: white;
+	font-size: 1.15rem;
+	width: 100%;
+	padding: .5rem 1rem;
+	border: 2px solid transparent;
+	outline: none;
+	border-radius: 1.5rem;
+	background-color: rgba(255, 255, 255, 0.25);
+	letter-spacing: 1px;
 }
+
+.sign__input:hover,
+.sign__input:focus{
+	color: white;
+	border: 2px solid rgba(255, 255, 255, 0.5);
+	background-color: transparent;
+}
+
+.sign__input + .sign__label {
+	margin-top: 1.5rem;
+}
+
+
+.sign__submit {
+	color: #ffffff;
+	font-size: 1rem;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-top: 2rem;
+	padding: .75rem;
+	border-radius: 2rem;
+	display: block;
+	width: 100%;
+	background-color: rgba(17, 97, 237, .75);
+	border: none;
+	cursor: pointer;
+    margin-left: 1rem;
+}
+
+.sign__submit:hover {
+	background-color: rgba(17, 97, 237, 1);
+}
+
+

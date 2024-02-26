@@ -1,31 +1,71 @@
+import {React , useState} from 'react';
+import axios from "axios";
+
 import './login.css';
 
 export default function Login () {
+
+    const[username,setUsername] = useState("");
+    const[password,setPassword] = useState("");
+
+
+	const handleLogin = async (e) => {
+		e.preventDefault();
+
+		try{
+
+			const response = await axios.post("http://localhost:8080/login" ,{
+				username,password
+			})
+			if (response.status === 200) {
+				console.log("sex");
+			}else{
+				console.log("idk feh");
+
+			}
+
+		}catch(error) {
+			console.error("echec : " + error);
+		}
+
+	}
+
+
     return (
-        <div>
-<div className="login-box">
-    <h2>Login</h2>
-    <form method="post" action='' >
-        <div className="user-box">
-            <input type="text"  required />
-            <label>Username</label>
-        </div>
-        <div className="user-box">
-            <input type="password"   required />
-            <label>Password</label>
-        </div>
-        <button className="btn" type="submit">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            Submit
-        </button>
-        <div className="signup-link">
-            <a href="/sign" >Sign up</a>
-        </div>
-    </form>
+<div className="login-container">
+
+	<form onSubmit={handleLogin} className="form-login">
+		<ul className="login-nav">
+             {/* active dir condition */}
+			<li className="login-nav__item active">  
+				<a href="/login">Login</a>
+			</li>
+			<li className="login-nav__item">
+				<a href="/sign">Sign Up</a>
+			</li>
+		</ul>
+		<label htmlFor="login-input-user" className="login__label">
+			Username
+		</label>
+		<input id="login-input-user"
+		 className="login__input"
+		  type="text"
+		  value={username}
+		  onChange={(e) => setUsername(e.target.value)}
+
+		   />
+		<label htmlFor="login-input-password" className="login__label">
+			Password
+		</label>
+		<input id="login-input-password"
+		 className="login__input"
+		  type="password"
+		  value={password}
+		  onChange={(e) => setPassword(e.target.value)}
+		   />
+
+		<button  type="submit" className="login__submit" >Login</button>
+	</form>
 </div>
-        </div>
     )
 }
